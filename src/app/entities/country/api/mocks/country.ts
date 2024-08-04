@@ -1,4 +1,4 @@
-export enum Country {
+export enum CountryMock {
   Ukraine = 'Ukraine',
   Poland = 'Poland',
   Australia = 'Australia',

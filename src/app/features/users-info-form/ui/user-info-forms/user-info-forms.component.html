@@ -1,0 +1,42 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between mb-3">
+    <div *ngIf="showTimer" class="d-flex align-items-center">
+      <button class="btn btn-warning me-2" (click)="cancelSubmission()">Cancel</button>
+      <span class="text-muted">Submitting in {{ timerValue }} seconds...</span>
+    </div>
+    <div class="d-flex align-items-center">
+      <button *ngIf="!showTimer" class="btn btn-success me-2" (click)="submitForms()" [disabled]="!areAllFormsValid()">
+        Submit all forms
+      </button>
+      <div *ngIf="countInvalidForms() > 0" class="text-danger ms-2">
+        {{ countInvalidForms() }} invalid forms
+      </div>
+    </div>
+  </div>
+
+  <div class="forms-container">
+    <div class="form-card" *ngFor="let control of formsArray; let i = index">
+      <button
+        *ngIf="formsArray.length > 1"
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="deleteForm(i)"
+      >
+      </button>
+      <app-user-info-form
+        [countries]="(countries$ | async) || []"
+        [formControl]="control"
+        class="flex-fill">
+      </app-user-info-form>
+    </div>
+
+    <div class="add-card" *ngIf="forms.length < 10 && !showTimer" (click)="addForm()">
+      <div class="add-button">+</div>
+    </div>
+  </div>
+
+  <div *ngIf="forms.length >= 10" class="alert alert-warning mt-3">
+    You have reached the maximum number of forms.
+  </div>
+</div>

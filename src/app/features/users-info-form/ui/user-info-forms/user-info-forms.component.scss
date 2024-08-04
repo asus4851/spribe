@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.submit-button {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.forms-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  grid-auto-rows: 1fr;
+}
+
+.form-card,
+.add-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.add-card {
+  cursor: pointer;
+  background: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-button {
+  font-size: 48px;
+  color: #007bff;
+}
+
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-fill {
+  flex: 1;
+}
